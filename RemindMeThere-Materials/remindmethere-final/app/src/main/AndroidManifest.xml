@@ -30,7 +30,7 @@
       android:name="com.google.android.geo.API_KEY"
       android:value="@string/google_maps_key" />
 
-    <activity android:name=".MainActivity">
+    <activity android:name=".IntroActivity">
 
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -39,8 +39,10 @@
       </intent-filter>
 
     </activity>
-
     <activity android:name=".NewReminderActivity" />
+    <activity android:name=".ShopBasketActivity" />
+    <activity android:name=".GeoCouponActivity" />
+    <activity android:name=".GeoshopMainActivity" />
     <receiver
       android:name=".GeofenceBroadcastReceiver"
       android:enabled="true"

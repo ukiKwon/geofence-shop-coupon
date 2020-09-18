@@ -31,7 +31,14 @@
 package com.android.raywenderlich.remindmethere
 
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
 
 abstract class BaseActivity : AppCompatActivity() {
   fun getRepository() = (application as ReminderApp).getRepository()
+
+  override
+  fun onCreateOptionsMenu(menu: Menu): Boolean {
+    menuInflater.inflate(R.menu.actionbar_actions, menu)
+    return true
+  }
 }

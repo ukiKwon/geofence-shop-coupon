@@ -1,7 +1,6 @@
 package com.android.raywenderlich.remindmethere;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 public class GeoshopMainActivity extends BaseActivity {
     @Override

@@ -32,8 +32,8 @@ package com.android.raywenderlich.remindmethere
 
 import android.content.Context
 import android.content.Intent
-import android.support.v4.app.JobIntentService
 import android.util.Log
+import androidx.core.app.JobIntentService
 import com.google.android.gms.location.Geofence
 import com.google.android.gms.location.GeofencingEvent
 

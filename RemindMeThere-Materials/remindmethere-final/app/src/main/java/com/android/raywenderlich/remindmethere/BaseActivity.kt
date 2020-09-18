@@ -31,9 +31,9 @@
 package com.android.raywenderlich.remindmethere
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 
 abstract class BaseActivity : AppCompatActivity() {
   fun getRepository() = (application as ReminderApp).getRepository()
@@ -47,13 +47,11 @@ abstract class BaseActivity : AppCompatActivity() {
   fun onOptionsItemSelected(item : MenuItem) : Boolean {
     when (item.getItemId()) {
         R.id.action_coupon -> {
-            // TODO : process the click event for action_search item.
             val intent = Intent(this, GeoCouponActivity::class.java);
             startActivity(intent);
             return true;
         }
-        R.id.action_coupon -> {
-            // TODO : process the click event for action_search item.
+        R.id.action_basket -> {
             val intent = Intent(this, ShopBasketActivity::class.java);
             startActivity(intent);
             return true;
@@ -61,4 +59,5 @@ abstract class BaseActivity : AppCompatActivity() {
         else -> return super.onOptionsItemSelected(item) ;
     }
   }
+
 }

@@ -30,7 +30,7 @@
       android:name="com.google.android.geo.API_KEY"
       android:value="@string/google_maps_key" />
 
-    <activity android:name=".IntroActivity">
+    <activity android:name=".IntroActivity"> <!-- 로딩화면 -->
 
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -39,10 +39,11 @@
       </intent-filter>
 
     </activity>
-    <activity android:name=".NewReminderActivity" />
-    <activity android:name=".ShopBasketActivity" />
-    <activity android:name=".GeoCouponActivity" />
-    <activity android:name=".GeoshopMainActivity" />
+    <activity android:name=".MainActivity"/><!-- 지도화면 -->
+    <activity android:name=".NewReminderActivity" /><!-- 장바구니 -->
+    <activity android:name=".GeoCouponActivity" /><!-- 쿠폰함 -->
+    <activity android:name=".ShopBasketActivity" /><!-- 장바구니 -->
+    <activity android:name=".GeoshopMainActivity" /><!-- 메인화면 -->
     <receiver
       android:name=".GeofenceBroadcastReceiver"
       android:enabled="true"

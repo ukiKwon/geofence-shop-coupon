@@ -1,0 +1,49 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_container_coupon"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/list_item_coupon_icon"
+        android:layout_width="@dimen/width_store"
+        android:layout_height="@dimen/height_store"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:src="@drawable/icon_store1"/>
+
+    <LinearLayout
+        android:id="@+id/layout_coupon_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_weight="4">
+        <TextView
+            android:id="@+id/list_item_coupon_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15%"
+            android:layout_weight="2"/>
+        <TextView
+            android:id="@+id/list_item_coupon_store"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adidos"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/list_item_coupon_leftTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10분"
+            android:layout_weight="2"/>
+        <TextView
+            android:id="@+id/list_item_coupon_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3F"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</LinearLayout>

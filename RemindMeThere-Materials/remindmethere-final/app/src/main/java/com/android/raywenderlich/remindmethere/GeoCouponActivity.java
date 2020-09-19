@@ -1,7 +1,9 @@
 package com.android.raywenderlich.remindmethere;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toolbar;
 
 import java.util.ArrayList;
@@ -12,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class GeoCouponActivity extends BaseActivity {
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private CouponAdapter mAdapter;//private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
     //원래는 Server로부터 상호 작용 필요
     private ArrayList < Coupon > mDataset = new ArrayList<>();
@@ -36,6 +38,13 @@ public class GeoCouponActivity extends BaseActivity {
 
         // specify an adapter (see also next example)
         mAdapter = new CouponAdapter(mDataset);
+        mAdapter.setOnItemClickListener(new CouponAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int pos) {
+                Intent intent = new Intent(GeoCouponActivity.this, RunningUserActivity.class);
+                startActivity(intent);
+            }
+        });
         recyclerView.setAdapter(mAdapter);
     }
     //generate Sample Coupon

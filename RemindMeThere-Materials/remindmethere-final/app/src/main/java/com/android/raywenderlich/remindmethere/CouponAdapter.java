@@ -15,7 +15,14 @@ import androidx.recyclerview.widget.RecyclerView;
 public class CouponAdapter extends RecyclerView.Adapter < CouponAdapter.MyViewHolder> {
 
     private ArrayList<Coupon> mDataset;
-
+    //click-listener
+    public interface OnItemClickListener {
+        void onItemClick(View v, int pos);
+    }
+    private OnItemClickListener mListener = null;
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mListener = listener;
+    }
     public class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public ImageView mimage;
@@ -24,7 +31,7 @@ public class CouponAdapter extends RecyclerView.Adapter < CouponAdapter.MyViewHo
         public TextView mDiscountRate;
         public TextView mLocation;
         public TextView mLeftTime;
-
+        //constructor
         public MyViewHolder(View itemView) {
             super(itemView);
             mimage = itemView.findViewById(R.id.list_item_coupon_icon);
@@ -37,14 +44,14 @@ public class CouponAdapter extends RecyclerView.Adapter < CouponAdapter.MyViewHo
                 public void onClick(View v) {
                     int pos = getAdapterPosition();
                     if (pos != RecyclerView.NO_POSITION) {//anything click on Recycler item
-                        Coupon c = mDataset.get(pos);
-
+                        if(mListener != null) {
+                            mListener.onItemClick(v, pos);
+                        }
                     }
                 }
             });
         }
     }
-
     // Provide a suitable constructor (depends on the kind of dataset)
     public CouponAdapter(ArrayList<Coupon> myDataset) {
         mDataset = myDataset;
@@ -74,8 +81,7 @@ public class CouponAdapter extends RecyclerView.Adapter < CouponAdapter.MyViewHo
         holder.mStoreName.setText(mc.mStoreName);
         holder.mDiscountRate.setText(mc.mDiscountRate);
         holder.mLeftTime.setText(String.valueOf(mc.mLeftTime));
-        //todo : 위치
-        //카테고리
+        //todo : 위치, 카테고리도 향후 추가
     }
 
     // Return the size of your dataset (invoked by the layout manager)

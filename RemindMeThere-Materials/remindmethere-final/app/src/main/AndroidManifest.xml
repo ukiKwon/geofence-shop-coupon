@@ -44,6 +44,7 @@
     <activity android:name=".GeoCouponActivity" /><!-- 쿠폰함 -->
     <activity android:name=".ShopBasketActivity" /><!-- 장바구니 -->
     <activity android:name=".GeoshopMainActivity" /><!-- 메인화면 -->
+    <activity android:name=".RunningUserActivity"/><!-- 상점 찾는 화면 -->
     <receiver
       android:name=".GeofenceBroadcastReceiver"
       android:enabled="true"

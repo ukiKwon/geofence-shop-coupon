@@ -61,6 +61,11 @@ abstract class BaseActivity : AppCompatActivity() {
             startActivity(intent);
             return true;
         }
+        android.R.id.home -> {
+            finish();
+            //onBackPressed();
+            return true;
+        }
         else -> return super.onOptionsItemSelected(item) ;
     }
   }

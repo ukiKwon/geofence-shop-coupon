@@ -3,6 +3,13 @@
   <dimen name="height_store">48dp</dimen>
   <dimen name="width_store">48dp</dimen>
   <dimen name="height_container_coupon">100dp</dimen>
-  <dimen name="title_height_font">70dp</dimen>
-  <dimen name="title_width_font">70dp</dimen>
+  <!-- font size -->
+  <dimen name="font_big_height">100sp</dimen>
+  <dimen name="font_big_width">100sp</dimen>
+  <dimen name="font_title_height">70sp</dimen>
+  <dimen name="font_title_width">70sp</dimen>
+  <dimen name="font_norm_height">35sp</dimen>
+  <dimen name="font_norm_width">35sp</dimen>
+  <dimen name="font_tiny_height">20sp</dimen>
+  <dimen name="font_tiny_width">20sp</dimen>
 </resources>

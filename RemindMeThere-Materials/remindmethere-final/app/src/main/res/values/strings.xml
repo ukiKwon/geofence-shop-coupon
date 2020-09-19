@@ -33,6 +33,8 @@
   <!-- rung fast -->
   <string name="start_run_fast">질주 시작!!!</string>
   <string name="msg_discount">할인 가능</string>
-  <!-- default --> 
-  <string name=
+  <string name="str_slash">/</string>
+  <!-- default -->
+  <string name="msg_blank">-</string>
+  <string name="default_timer">04:00</string>
 </resources>

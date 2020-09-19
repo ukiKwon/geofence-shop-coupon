@@ -2,9 +2,11 @@ package com.android.raywenderlich.remindmethere;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,6 +23,7 @@ public class GeoCouponActivity extends BaseActivity {
         setContentView(R.layout.activity_coupon);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview_coupon);
+        //gengerate coupon
         genSampleCoupon();
 
         // use this setting to improve performance if you know that changes

@@ -16,7 +16,7 @@ public class CouponAdapter extends RecyclerView.Adapter < CouponAdapter.MyViewHo
 
     private ArrayList<Coupon> mDataset;
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public ImageView mimage;
         //String mCategory;
@@ -32,6 +32,16 @@ public class CouponAdapter extends RecyclerView.Adapter < CouponAdapter.MyViewHo
             mDiscountRate = itemView.findViewById(R.id.list_item_coupon_discount);
             mLeftTime = itemView.findViewById(R.id.list_item_coupon_leftTime);
             //click-listener
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = getAdapterPosition();
+                    if (pos != RecyclerView.NO_POSITION) {//anything click on Recycler item
+                        Coupon c = mDataset.get(pos);
+
+                    }
+                }
+            });
         }
     }
 

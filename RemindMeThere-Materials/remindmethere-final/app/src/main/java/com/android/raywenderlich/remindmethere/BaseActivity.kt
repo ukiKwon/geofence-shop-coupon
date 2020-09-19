@@ -40,8 +40,13 @@ abstract class BaseActivity : AppCompatActivity() {
 
   override
   fun onCreateOptionsMenu(menu: Menu): Boolean {
-    menuInflater.inflate(R.menu.actionbar_actions, menu)
-    return true
+      menuInflater.inflate(R.menu.actionbar_actions, menu)
+
+      //actionbar-back button-switch on
+      val actionBar = supportActionBar
+      actionBar!!.setDisplayHomeAsUpEnabled(true)
+      supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+      return true
   }
   override
   fun onOptionsItemSelected(item : MenuItem) : Boolean {

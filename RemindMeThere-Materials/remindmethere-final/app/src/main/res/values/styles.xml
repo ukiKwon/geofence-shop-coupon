@@ -14,5 +14,12 @@
       <item name="android:textColor">#00FF00</item>
       <item name="android:typeface">monospace</item>
     </style>
+  <!-- 아래에서 올라오는 dialog -->
+  <style name="CustomBottomSheetDialogTheme" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+    <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+  </style>
 
+  <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+    <item name="android:background">@android:color/transparent</item>
+  </style>
 </resources>

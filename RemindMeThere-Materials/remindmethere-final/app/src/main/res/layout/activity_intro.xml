@@ -29,14 +29,14 @@
     <!-- 로고 그림 -->
     <ImageView
         android:id="@+id/logo_geoshop"
-        android:layout_width="230dp"
-        android:layout_height="230dp"
+        android:layout_width="284dp"
+        android:layout_height="285dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="106dp"
-        android:layout_marginEnd="86dp"
-        android:layout_marginBottom="185dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="140dp"
         android:src="@drawable/logo_geoshop_no_head" />
     <!-- 로고 글자 -->
     <ImageView

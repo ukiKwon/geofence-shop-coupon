@@ -4,4 +4,6 @@
   <color name="colorPrimaryDark">#FF7830</color>
   <color name="colorAccent">#FF4081</color>
   <color name="colorReminderFill">#9600574b</color>
+  <color name="colorPlus">#534dd9</color>
+  <color name="colorMinus">#dc3c40</color>
 </resources>

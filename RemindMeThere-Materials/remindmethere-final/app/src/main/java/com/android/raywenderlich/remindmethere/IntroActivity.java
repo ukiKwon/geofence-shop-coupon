@@ -13,7 +13,7 @@ public class IntroActivity extends AppCompatActivity {
     private LottieAnimationView animationView;
     private LottieDrawable lottieDrawable;
     private long start_time, wait_time;
-    private final int INTRO_CYCLE_TIME = 5000;
+    private final int INTRO_CYCLE_TIME = 4300;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

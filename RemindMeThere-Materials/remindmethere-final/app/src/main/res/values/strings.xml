@@ -37,4 +37,6 @@
   <!-- default -->
   <string name="msg_blank">-</string>
   <string name="default_timer">04:00</string>
+  <string name="kor_max">최대</string>
+  <string name="kor_min">최소</string>
 </resources>

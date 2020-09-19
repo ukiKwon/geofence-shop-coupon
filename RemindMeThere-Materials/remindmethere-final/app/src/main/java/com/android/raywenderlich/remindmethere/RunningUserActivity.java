@@ -20,9 +20,9 @@ public class RunningUserActivity extends BaseActivity{
         mlottieview.cancelAnimation();
         //todo : 시간 타이머 완료되면 사람 뭔가 머리를 쥐며 쓰러지는 animation 혹은 종료를 보이는 Timer 표시
         //mlottieview.setAnimation(SERVER_STATE & CUSTOM_STATE? R.raw.tab : R.raw.loading);
-        mlottieview.setAnimation("runman.json");
+        //mlottieview.setAnimation("runman.json");
         mlottieview.playAnimation();
         mlottieview.setProgress(0.5f);
-
+        mlottieview.setSpeed(1.5f);
     }
 }

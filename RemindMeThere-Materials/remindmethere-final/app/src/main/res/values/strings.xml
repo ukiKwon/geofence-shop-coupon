@@ -30,4 +30,9 @@
   <string name="geofence_too_many_pending_intents">
     You have provided too many PendingIntents to the addGeofences() call.
   </string>
+  <!-- rung fast -->
+  <string name="start_run_fast">질주 시작!!!</string>
+  <string name="msg_discount">할인 가능</string>
+  <!-- default --> 
+  <string name=
 </resources>

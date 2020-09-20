@@ -31,7 +31,7 @@ public class RunningUserActivity extends BaseActivity{
     int coupon_msec = 10000;
     final long warnBoundary_sec = 5;
     boolean warnBoundary_on = false;//최소 제한 시간
-    boolean isCustomerIn = true;
+    boolean isCustomerIn = false;
     //
     @Override
     public void onCreate(Bundle savedInstanceState) {

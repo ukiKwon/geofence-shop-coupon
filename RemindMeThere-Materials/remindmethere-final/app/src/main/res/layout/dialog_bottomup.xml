@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="- 하단에 필요한 정보를 넣을수 있습니다."
+        android:text="아쉽지만 쿠폰 최대 할인은 다음 기회로.."
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="- 정말 활용도가 높은 기능이죠? 모두 즐겁게 개발해요."
+        android:text="매장 주인에게 전화해보시겠어요?"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 

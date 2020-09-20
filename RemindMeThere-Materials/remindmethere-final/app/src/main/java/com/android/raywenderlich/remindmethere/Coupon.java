@@ -10,15 +10,16 @@ public class Coupon {
     //String mCategory;
     String mStoreName;
     String mDiscountRate;
-    Location mLocation;
-    float mLeftTime;
+    String mLocation;//Location mLocation;
+    String mLeftTime;
     JSONObject mSendInfo;
 
-    Coupon(Drawable image, String storename, String mDiscountRate, float mLeftTime) {
+    Coupon(Drawable image, String storename, String discountRate, String leftTime, String floor) {
         mimage = image;
         mStoreName = storename;
-        mDiscountRate = mDiscountRate;
-        mLeftTime = mLeftTime;
+        mDiscountRate = discountRate;
+        mLeftTime = leftTime;
+        mLocation = floor;
     }
     Coupon(JSONObject mjson) {
         mSendInfo = mjson;
@@ -26,16 +27,16 @@ public class Coupon {
     public void setDiscountRate(String dicountrate) {
         mDiscountRate = dicountrate;
     }
-    public void setLocation(Location location) {
+    public void setLocation(String location) {
         mLocation = location;
     }
-    public void setLeftTime(float leftTime) {
+    public void setLeftTime(String leftTime) {
         mLeftTime = leftTime;
     }
     public Drawable getImage() {return this.mimage;}
     public String getDiscountRate() {return this.mDiscountRate;}
     public String getName() {return this.mStoreName;}
-    public Location getLocation() {return this.mLocation;}
-    public float getLeftTime() {return this.mLeftTime;}
+    public String getLocation() {return this.mLocation;}
+    public String getLeftTime() {return this.mLeftTime;}
     public JSONObject getmSendInfo() {return mSendInfo;}
 }

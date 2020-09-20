@@ -49,13 +49,13 @@ public class GeoCouponActivity extends BaseActivity {
     }
     //generate Sample Coupon
     private void genSampleCoupon() {
-        addItem(getDrawable(R.drawable.icon_store1), "Oho", "13%", 4);
-        addItem(getDrawable(R.drawable.icon_store2), "Amuna", "15%", 3);
-        addItem(getDrawable(R.drawable.icon_store3), "Teach", "10%", 6);
-        addItem(getDrawable(R.drawable.icon_store4), "Me", "20%", 2);
+        addItem(getDrawable(R.drawable.logo_nicy), "신발 매장", "17%", "10", "2F");
+        addItem(getDrawable(R.drawable.logo_puma), "신발 매장", "15%", "14", "3F");
+        addItem(getDrawable(R.drawable.logo_sinsaegae), "백화점 의류", "20%", "5", "4F");
+        addItem(getDrawable(R.drawable.logo_adidas), "신발 매장", "20%", "4", "1F");
     }
-    public void addItem(Drawable icon, String storename, String discount, float lefttime) {
-        Coupon item = new Coupon(icon, storename, discount, Float.valueOf(lefttime));
+    public void addItem(Drawable icon, String storename, String discount, String lefttime, String floor) {
+        Coupon item = new Coupon(icon, storename, discount, lefttime ,floor);
         mDataset.add(item);
     }
 }

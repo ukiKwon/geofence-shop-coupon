@@ -74,8 +74,8 @@ public class RunningUserActivity extends BaseActivity{
             //타이머가 끝나면
             public void onFinish() {
                 //textview-null-set
-//                tv_timer.setVisibility(View.INVISIBLE);
-//                layout_run.setVisibility(View.INVISIBLE);
+                tv_timer.setVisibility(View.INVISIBLE);
+                layout_run.setVisibility(View.INVISIBLE);
                 //영역 안에 들어왔는지 확인
                 customDialog.show(getSupportFragmentManager(), "custom_dialog");
                 if (isCustomerIn) {

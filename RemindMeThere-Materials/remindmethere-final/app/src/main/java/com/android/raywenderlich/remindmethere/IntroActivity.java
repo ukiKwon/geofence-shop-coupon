@@ -23,7 +23,7 @@ public class IntroActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent welcome = new Intent( IntroActivity.this, SendCustomerInfoActivity.class);//GeoshopMainActivity.class);
+                Intent welcome = new Intent( IntroActivity.this, GeoshopMainActivity.class);//GeoshopMainActivity.class);
                 startActivity(welcome);
             }
         }, INTRO_CYCLE_TIME);

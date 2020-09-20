@@ -23,6 +23,7 @@ public class CouponAdapter extends RecyclerView.Adapter < CouponAdapter.MyViewHo
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.mListener = listener;
     }
+
     public class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public ImageView mimage;

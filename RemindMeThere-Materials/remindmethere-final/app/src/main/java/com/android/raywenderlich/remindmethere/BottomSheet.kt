@@ -15,9 +15,8 @@ class BottomSheet() : BottomSheetDialogFragment() {
             savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(R.layout.dialog_bottomup, container, false)
+        return inflater.inflate(R.layout.dialog_bottomup, container, false) as ViewGroup
     }
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         view?.findViewById<Button>(R.id.button_bottom_sheet)?.setOnClickListener {

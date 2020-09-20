@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,7 +16,9 @@ public class RunningUserActivity extends BaseActivity{
     TextView tv_timer;
     TextView tv_run_title;
     TextView tv_bottomup_title, tv_bottomup_c1, tv_bottomup_c2;
-    private BottomSheet customDialog = new BottomSheet();
+    LinearLayout layout_run;
+//    private BottomSheet customDialog = new BottomSheet();
+    private BottomSheetDialog customDialog = new BottomSheetDialog();
     Button btn_bottomup;
     //todo : 가게 주인이 설정한 최대 할인율과 최소 할인율
     TextView tv_max_discount;//최대할인율
@@ -28,7 +31,7 @@ public class RunningUserActivity extends BaseActivity{
     int coupon_msec = 10000;
     final long warnBoundary_sec = 5;
     boolean warnBoundary_on = false;//최소 제한 시간
-    boolean isCustomerIn = false;
+    boolean isCustomerIn = true;
     //
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,21 +44,13 @@ public class RunningUserActivity extends BaseActivity{
         tv_min_discount = (TextView)findViewById(R.id.textview_min_dicount);
         tv_max_discount.setText(String.valueOf(custom_max_discount));
         tv_min_discount.setText(String.valueOf(custom_min_discount));
+        //
+        layout_run = (LinearLayout) findViewById(R.id.layout_run_discount);
         //bottom-sheet
         tv_bottomup_title = (TextView) findViewById(R.id.tv_bottomup_title);
         tv_bottomup_c1 =(TextView) findViewById(R.id.tv_bottomup_content1);
         tv_bottomup_c2 = (TextView) findViewById(R.id.tv_bottomup_content2);
         btn_bottomup = (Button) findViewById(R.id.button_bottom_sheet);
-        //
-        btn_bottomup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //button 클릭시 이동
-                //case 1 : 상점안에 들어온 결과
-                //case 2 : 상점안에 들어오지 못 한 결과
-                System.out.println("dd");
-            }
-        });
         //calculate discount ratio : 할인율 감소 비율 책정
         calculateDiscountRatio();
         //timer
@@ -65,9 +60,9 @@ public class RunningUserActivity extends BaseActivity{
                 float curMaxDiscount = Float.parseFloat(tv_max_discount.getText().toString());//max-discount;최대남은할인
                 //
                 tv_timer.setText("앞으로 " + result + " 초");
-                tv_max_discount.setText(String.format("%.2f", (curMaxDiscount-discountRatio_unit)));
-                System.out.println("> cur :" + (curMaxDiscount - discountRatio_unit));
-                //discountRatio_unit
+                curMaxDiscount -= discountRatio_unit;
+                tv_max_discount.setText(String.format("%.2f", curMaxDiscount));
+                System.out.println("> cur :" + curMaxDiscount);
                 //버닝모드 : 얼마남지 않을 때 변하는 동작
                 if (!warnBoundary_on && result <= warnBoundary_sec) {//60000) {
                     Toast.makeText(RunningUserActivity.this, warnBoundary_sec + " 초 남았음", Toast.LENGTH_SHORT).show();
@@ -78,23 +73,26 @@ public class RunningUserActivity extends BaseActivity{
             }
             //타이머가 끝나면
             public void onFinish() {
-                tv_timer.setText("");
+                //textview-null-set
+//                tv_timer.setVisibility(View.INVISIBLE);
+//                layout_run.setVisibility(View.INVISIBLE);
                 //영역 안에 들어왔는지 확인
+                customDialog.show(getSupportFragmentManager(), "custom_dialog");
                 if (isCustomerIn) {
                     tv_run_title.setText("챌린지 성공!");
-                    customDialog.show(getSupportFragmentManager(), "custom_dialog");
-                    tv_bottomup_c1.setText(store_location + " " + store_name + "으로부터 ");
-                    tv_bottomup_c2.setText(tv_max_discount.getText() + "%" + "할인 쿠폰 발행되었습니다");
-                    mlottieview.setAnimation(R.raw.store_arrived);
-                    btn_bottomup.setText("다음 단계");
+//                    tv_bottomup_c1.setText(store_location + " " + store_name + "으로부터 ");
+//                    tv_bottomup_c2.setText(tv_max_discount.getText() + "%" + "할인 쿠폰 발행되었습니다");
+                    mlottieview.setAnimation(R.raw.store_choosed);
+//                    btn_bottomup.setText("다음 단계");
                 } else {
-                    customDialog.show(getSupportFragmentManager(), "custom_dialog");
                     tv_run_title.setText("챌린지 실패");
-                    tv_bottomup_c1.setText(store_location + " " + store_name + "으로");
-                    tv_bottomup_c2.setText("직접 전화를 해보시겠습니까?");
+//                    tv_bottomup_c1.setText(store_location + " " + store_name + "으로");
+//                    tv_bottomup_c2.setText("직접 전화를 해보시겠습니까?");
                     mlottieview.setAnimation(R.raw.door_closed);
-                    btn_bottomup.setText("전화걸기");
+//                    btn_bottomup.setText("전화걸기");
                 }
+                //animation setting
+                mlottieview.playAnimation();
             }
         }.start();
         //lottie-view;running_man
@@ -132,4 +130,5 @@ public class RunningUserActivity extends BaseActivity{
             Toast.makeText(getApplicationContext(), "한번 더 누르면 쿠폰을 포기합니다.", Toast.LENGTH_SHORT).show();
         }
     }
+
 }

@@ -40,6 +40,6 @@
         android:background="#1c9d9e"
         android:textColor="@android:color/white"
         android:textStyle="bold"
-        android:text="좋아요!" />
+        android:text="다음단계로" />
 
 </LinearLayout>
